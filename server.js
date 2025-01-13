@@ -16,14 +16,11 @@ app.use(cors({
 // Parse JSON bodies
 app.use(express.json());
 
-// Root route to avoid "Cannot GET /" error
-app.get('/', (req, res) => {
-    res.send('Welcome to the Weather API');
-});
+
 
 
 // Routes
-app.get('/weather', async (req, res) => {
+app.get('/', async (req, res) => {
     try {
         const { city } = req.query;
         
